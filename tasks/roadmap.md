@@ -1,0 +1,9 @@
+1.  **Project Scaffolding**: Establish the complete Modal project structure, including the central `run.py` orchestrator, `src` directory, shared `outputs` volume, and a container image with all required Python libraries.
+2.  **Data Generation**: Create a script to collect the required 100,000 frames from the `dm_control` Cartpole-swingup environment using a random policy and save the dataset to the shared volume.
+3.  **World Model Core Implementation**: Implement the core components of a Dreamer-style Recurrent State-Space Model (RSSM) - encoder, decoder, dynamics predictor, and representation model. Include a self-test to verify the model's forward pass.
+4.  **Baseline (DreamerV2) Agent Implementation**: Integrate the world model from the previous task into a full agent by adding the pixel-based reconstruction loss, KL-divergence loss, and an Actor-Critic policy learner. Verify with a short test run.
+5.  **Train Baseline Agent**: Execute the full training run for the baseline DreamerV2 agent for 40,000 gradient steps, saving the final model weights and training logs.
+6.  **SALVO-mini Agent Implementation**: Modify the baseline agent by replacing the pixel-level reconstruction loss with a perceptual loss calculated in the embedding space of a frozen CLIP ViT-B/32 model.
+7.  **Train SALVO-mini Agent**: Execute the full training run for the experimental SALVO-mini agent for 40,000 gradient steps, saving the final model weights and training logs.
+8.  **Evaluation Implementation and Execution**: Implement the Cross-Entropy Method (CEM) planner for evaluation. Run the evaluation protocol (10 episodes) for both the trained baseline and SALVO-mini models, saving the performance metrics.
+9.  **Final Analysis and Verdict**: Load the evaluation results for both models, compare them against the success criteria defined in the MVH_SPEC, and generate a final summary report declaring the hypothesis as validated or falsified.
