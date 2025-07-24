@@ -1,0 +1,15 @@
+dreamerv2/
+# Ignore the DreamerV2 model directory
+
+venv2/
+.env
+# Ignore the virtual environment directory
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+
